@@ -1,5 +1,5 @@
 /**
- * This is an example with chai loaded in via require and not using the chai plugin
+ * This is an example with chai loaded in via require and not using the chai plugin. It does not need backbone, see tag v0.1
  */
 // this one is with manual chai load
 define( ['chai' ] ,  function ( chai  ) {

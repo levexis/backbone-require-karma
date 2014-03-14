@@ -1,4 +1,7 @@
-console.log('starting require');
+/* this the main.js for require for our app
+ * we disable loading of this in our karma version
+ * and create a special one in test/main.js
+ */
 require.config({
     paths: {
         'jquery' : 'vendor/jquery-1.10.1.min',

@@ -5,10 +5,10 @@ module.exports = function(config) {
         // base path, that will be used to resolve files and exclude
         basePath: '',
 
-        // frameworks to use
+        // frameworks to use, these need to be specified in plugins below
         frameworks: [ 'mocha', 'requirejs' , 'sinon-chai', 'chai-backbone'],
 
-        // list of files / patterns to load into require, if not loaded here will not work later
+        // list of ALL files / patterns needed by requireJS, if not loaded here will not work later
         files: [
             { pattern: 'node_modules/chai/chai.js' , included: false },
             { pattern: 'public/js/**/*.js' , included: false },
@@ -17,7 +17,7 @@ module.exports = function(config) {
             'test/main.js'
         ],
 
-        // list of files to exclude
+        // list of files to exclude - the original main.js is replaced with one that creates the test list and no bootstrap
         exclude: [
             'public/js/main.js'
         ],
@@ -50,6 +50,7 @@ module.exports = function(config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
+        // browsers need to be in plugins below
         browsers: ['Safari'  ],
 
         // If browser does not capture in given timeout [ms], kill it
@@ -63,6 +64,7 @@ module.exports = function(config) {
         //    '**/client/js/*.js': 'coverage'
     },
 
+    // these need to be in your dev dependencies in package.json
     plugins: [
         "karma-mocha",
         "karma-requirejs",
