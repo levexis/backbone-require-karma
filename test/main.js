@@ -5,16 +5,32 @@ var tests = Object.keys ( window.__karma__.files).filter(
 );
 console.log(tests);
 require({
-    baseUrl: '../public/js',
+    baseUrl: '/base/public/js/',
     paths: {
-        'chai' : '../../node_modules/chai/chai.js',
+        'chai' : '../../node_modules/chai/chai',
         'jquery' : 'vendor/jquery-1.10.1.min',
         'underscore' : 'vendor/underscore',
         'backbone' : 'vendor/backbone',
-        'dualStorage' : 'vendor/backbone.dualstorage.js',
-        'require': 'vendor/require',
-        'text': 'vendor/text'
+        'text' : 'vendor/text',
+        'dualStorage' : 'vendor/backbone.dualstorage'
+    },
+    shim: {
+        underscore: {
+            exports: '_'
+        },
+        jquery: {
+            exports: '$'
+        },
+        backbone: {
+            deps: ['underscore', 'jquery' ],
+            exports: 'Backbone'
+        },
+        dualStorage: {
+            deps: ['backbone'],
+            exports: 'Backbone'
+        }
     },
     deps: tests,
     callback: window.__karma__.start
 });
+console.log(require);

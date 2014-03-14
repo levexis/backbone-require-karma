@@ -25,15 +25,11 @@ require.config({
     }
 });
 
-// jquery already exists
-//define('jquery', function () { return window.$; });
-
-
 require.onError = function (err) {
     console.trace('requireJS error', err);
 };
 
-
+// bootstrap app
 require([
     'app'
 ], function(app){

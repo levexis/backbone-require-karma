@@ -3,7 +3,7 @@
  */
 console.log('run');
 
-define( ['../node_modules/chai/chai.js' ] ,  function ( chai  ) {
+define( ['chai' ] ,  function ( chai  ) {
     console.log('loaded')
     var should = chai.should();
     describe('A test', function() {
