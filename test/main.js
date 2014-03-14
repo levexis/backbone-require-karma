@@ -3,7 +3,6 @@ var tests = Object.keys ( window.__karma__.files).filter(
         return /\.test\.js$/.test(file);
     }
 );
-console.log(tests);
 require({
     baseUrl: '/base/public/js/',
     paths: {
@@ -33,4 +32,4 @@ require({
     deps: tests,
     callback: window.__karma__.start
 });
-console.log(require);
+document.write('<div id="main"></div>');

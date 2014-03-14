@@ -1,10 +1,8 @@
 /**
- * Created by paulcook on 13/03/2014.
+ * This is an example with chai loaded in via require and not using the chai plugin
  */
-console.log('run');
-
+// this one is with manual chai load
 define( ['chai' ] ,  function ( chai  ) {
-    console.log('loaded')
     var should = chai.should();
     describe('A test', function() {
         it('should be a test', function () {

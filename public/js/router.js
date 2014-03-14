@@ -21,7 +21,6 @@ define([
 
         default: function() {
             registry.zombieKiller();
-            console.log('new hello');
             registry.view.HelloView = new HelloView( {el : $('#main') } );
         }
     });

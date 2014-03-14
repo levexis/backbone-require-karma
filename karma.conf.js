@@ -6,12 +6,13 @@ module.exports = function(config) {
         basePath: '',
 
         // frameworks to use
-        frameworks: [ 'mocha', 'requirejs'], // , 'sinon-chai', 'chai-backbone'],
+        frameworks: [ 'mocha', 'requirejs' , 'sinon-chai', 'chai-backbone'],
 
         // list of files / patterns to load into require, if not loaded here will not work later
         files: [
             { pattern: 'node_modules/chai/chai.js' , included: false },
             { pattern: 'public/js/**/*.js' , included: false },
+            { pattern: 'public/js/**/*.html' , included: false },
             { pattern: 'test/**/*.test.js', included: false},
             'test/main.js'
         ],
@@ -65,12 +66,11 @@ module.exports = function(config) {
     plugins: [
         "karma-mocha",
         "karma-requirejs",
-//        "karma-sinon-chai",
-//        "karma-chai-backbone",
-//        'karma-chrome-launcher',
-//        'karma-firefox-launcher',
+        "karma-sinon-chai",
+        "karma-chai-backbone",
+        'karma-chrome-launcher',
+        'karma-firefox-launcher',
         'karma-safari-launcher'
-//            'karma-junit-reporter'
     ]
 
     });
