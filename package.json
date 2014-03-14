@@ -1,0 +1,35 @@
+{
+    "title": "dualstorage-connectid",
+    "name": "dualstorage-connectid",
+    "description": "ConnectiD dualstorage backbone fork",
+    "version": "0.0.1",
+    "author": "ConnectiD.me",
+    "homepage": "http://be.connectid.me",
+    "private": false,
+    "contributors": [
+        "Paul Cook <levexis@googlemail.com> (http://linkedin.com/in/adtechzen)"
+    ],
+    "engines": {
+        "node": "0.10.22"
+    },
+    "scripts": {
+        "start": "app.js"
+    },
+    "dependencies": {
+        "express": "latest"
+    },
+    "devDependencies": {
+        "chai": "latest",
+        "mocha": "latest",
+        "nodemon": "latest",
+        "karma": "0.10.0",
+        "karma-mocha": "latest",
+        "karma-requirejs": "latest",
+        "karma-sinon-chai": "latest",
+        "karma-chai-backbone": "latest",
+        "karma-coffee-preprocessor": "~0.1.3",
+        "karma-chrome-launcher": "latest",
+        "karma-firefox-launcher": "latest",
+        "karma-safari-launcher": "latest"
+    }
+}
