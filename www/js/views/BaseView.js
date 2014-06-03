@@ -3,7 +3,6 @@
  * All views should be extended from this
  */
 
-
 define([
     'jquery',
     'underscore',
@@ -11,27 +10,11 @@ define([
     'registry'
 ], function($, _, Backbone, registry){
 
-    var applyTracking = function (event, handler) {
-        return function() {
-            if( registry.isTest() ) {
-                debug.show();
-            } else if ( window.sioConnect.ready ) {
-                window.analytics.track( event, _.extend( { host : location.host }, this.getAnalFields()) );
-            }
-            return handler.apply(this,arguments);
-        };
-    };
+
 
     var BaseView = function (options) {
         this.bindings = [];
         this.subviews = [];
-        // apply tracking to links
-        if ( this.events && Object.keys(this.events).length ) {
-            for (var event in this.events) {
-                var originalHandler =  this[this.events[event]];
-                this[this.events[event]] = applyTracking(event,originalHandler);
-            }
-        }
         Backbone.View.apply(this, [options]);
     };
 

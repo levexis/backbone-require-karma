@@ -1,35 +1,48 @@
 {
-    "title": "dualstorage-connectid",
-    "name": "dualstorage-connectid",
-    "description": "ConnectiD dualstorage backbone fork",
-    "version": "0.0.1",
-    "author": "ConnectiD.me",
-    "homepage": "http://be.connectid.me",
-    "private": false,
-    "contributors": [
-        "Paul Cook <levexis@googlemail.com> (http://linkedin.com/in/adtechzen)"
-    ],
-    "engines": {
-        "node": "0.10.22"
-    },
-    "scripts": {
-        "start": "app.js"
-    },
-    "dependencies": {
-        "express": "latest"
-    },
-    "devDependencies": {
-        "chai": "latest",
-        "mocha": "latest",
-        "nodemon": "latest",
-        "karma": "0.10.0",
-        "karma-mocha": "latest",
-        "karma-requirejs": "latest",
-        "karma-sinon-chai": "latest",
-        "karma-chai-backbone": "latest",
-        "karma-coffee-preprocessor": "~0.1.3",
-        "karma-chrome-launcher": "latest",
-        "karma-firefox-launcher": "latest",
-        "karma-safari-launcher": "latest"
-    }
+  "title": "backbone-require-karma",
+  "name": "backbone-require-karma",
+  "description": "Example / base backbone, karma, requirejs, grunt, bower, project that uses node express to create a web server ",
+  "version": "0.0.2",
+  "author": "Paul Cook",
+  "homepage": "http://github.com/levexis",
+  "private": false,
+  "contributors": [
+    "Paul Cook <levexis@googlemail.com> (http://linkedin.com/in/adtechzen)"
+  ],
+  "engines": {
+    "node": "0.10.22"
+  },
+  "scripts": {
+    "start": "app.js",
+    "test": "./node_modules/karma/bin/karma start",
+    "build": "grunt"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "bower": "latest",
+    "chai": "latest",
+    "mocha": "latest",
+    "nodemon": "latest",
+    "karma": "0.10.1",
+    "karma-mocha": "latest",
+    "karma-requirejs": "latest",
+    "karma-sinon-chai": "latest",
+    "karma-chai-backbone": "latest",
+    "karma-safari-launcher": "latest",
+    "grunt-bower-task": "~0.3.4",
+    "grunt-karma": "0.7.1",
+    "phantomjs": "1.9.7-1",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-coverage" : "latest",
+    "karma-coffee-preprocessor": "~0.1.3",
+    "karma-ie-launcher": "latest",
+    "karma-htmlfile-reporter": "0.1.0"
+
+  }
 }

@@ -7,14 +7,13 @@ var tests = Object.keys ( window.__karma__.files).filter(
  * so we set our baseUrl off that so we can pick files from karmas cache
 */
 require({
-    baseUrl: '/base/public/js/',
+    baseUrl: '/base/www/js/',
     paths: {
         'chai' : '../../node_modules/chai/chai',
-        'jquery' : 'vendor/jquery-1.10.1.min',
-        'underscore' : 'vendor/underscore',
-        'backbone' : 'vendor/backbone',
-        'text' : 'vendor/text',
-        'dualStorage' : 'vendor/backbone.dualstorage'
+        'jquery' : 'vendor/jquery/jquery.min',
+        'underscore' : 'vendor/underscore/underscore',
+        'backbone' : 'vendor/backbone/backbone',
+        'text' : 'vendor/text/text',
     },
     shim: {
         underscore: {
@@ -27,10 +26,6 @@ require({
             deps: ['underscore', 'jquery' ],
             exports: 'Backbone'
         },
-        dualStorage: {
-            deps: ['backbone'],
-            exports: 'Backbone'
-        }
     },
     deps: tests,
     callback: window.__karma__.start
