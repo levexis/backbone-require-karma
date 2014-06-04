@@ -1,4 +1,4 @@
-define(['underscore','jquery' ], function(_,$ ) {
+define(['underscore','jquery' ], function(_ , $ ) {
     var registry = {
         //This kills all views stored at any point in time.
         zombieKiller : function(){

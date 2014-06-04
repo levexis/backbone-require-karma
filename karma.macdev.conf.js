@@ -1,4 +1,12 @@
-// basic Karma configuration for e2e testing use, runs once and uses phantomjs
+/*
+ * use this configuration for developing on mac, it does not generate coverage reports to do those run
+ * standard karma without specifing config or use npm test
+ * this assumes you have a standard set of browsers and want to autorun tests and you have installed chrome
+ * and firefox but not Opera or IE. We install phantom, this is what is used in e2e testing (npm test).
+ * Use:
+ * karma start karma.macdev.conf.js
+ */
+
 module.exports = function(config) {
     config.set({
 
@@ -24,8 +32,8 @@ module.exports = function(config) {
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['progress', 'dots' ,'html' , 'coverage'], // need to install spec using
-
+//        reporters: ['progress', 'dots' ,'html' , 'coverage'], // need to install spec using
+        
         // web server port
         port: 9876,
 
@@ -41,8 +49,7 @@ module.exports = function(config) {
         logLevel: config.LOG_ERROR,
 
         // enable / disable watching file and executing tests whenever any file changes
-//        autoWatch: true, not for run once
-        autoWatch: false,
+        autoWatch: true,
 
         // Start these browsers, currently available:
         // - Chrome
@@ -53,22 +60,20 @@ module.exports = function(config) {
         // - PhantomJS
         // - IE (only Windows)
         // browsers need to be in plugins below
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS'  ],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 60000,
 
-        // Continuous Integration mode
-        // if true, it capture browsers, run tests and exit
-//        singleRun: false, // not for run once
-        singleRun: true,
+        singleRun: false,
+//        singleRun: true,
 
         preprocessors : {
-            '**/www/*.js': 'coverage'
+//            '**/www/*.js': 'coverage'
         },
 
         htmlReporter: {
-            outputFile: 'test/report.html'
+//            outputFile: 'test/report.html'
         },
         coverageReporter: {
             type : 'html',
@@ -76,20 +81,20 @@ module.exports = function(config) {
             file : 'coverage.html'
         },
 
-    // these need to be in your dev dependencies in package.json
-    plugins: [
-        "karma-mocha",
-        "karma-requirejs",
-        "karma-sinon-chai",
-        "karma-chai-backbone",
-        'karma-chrome-launcher',
-        'karma-firefox-launcher',
-        'karma-safari-launcher',
-        'karma-phantomjs-launcher',
-        'karma-ie-launcher',
-        'karma-htmlfile-reporter',
-        'karma-coverage'
-    ]
+        // these need to be in your dev dependencies in package.json
+        plugins: [
+            "karma-mocha",
+            "karma-requirejs",
+            "karma-sinon-chai",
+            "karma-chai-backbone",
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-safari-launcher',
+            'karma-phantomjs-launcher',
+            'karma-ie-launcher',
+            'karma-htmlfile-reporter',
+            'karma-coverage'
+        ]
 
     });
 };

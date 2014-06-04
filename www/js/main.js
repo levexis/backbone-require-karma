@@ -27,7 +27,7 @@ require.onError = function (err) {
     console.trace('requireJS error', err);
 };
 
-// bootstrap the app.js package
+// bootstrap the app.js package so put initial code to run there
 require([
     'app'
 ], function(app){
